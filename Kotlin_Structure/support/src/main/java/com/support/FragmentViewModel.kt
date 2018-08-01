@@ -1,5 +1,5 @@
-package com.example.parth.kotlinpractice_2.support
+package com.support
 
-import android.databinding.BaseObservable
+import android.arch.lifecycle.ViewModel
 
-open class FragmentViewModel : BaseObservable()
+open class FragmentViewModel : ViewModel()

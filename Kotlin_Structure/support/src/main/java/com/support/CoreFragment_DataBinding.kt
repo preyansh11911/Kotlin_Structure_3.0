@@ -1,17 +1,23 @@
-package com.example.parth.kotlinpractice_2.support
+package com.support
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
+import android.support.annotation.LayoutRes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.parth.kotlinpractice_2.support.BaseFragment
 
 abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM>, DB : ViewDataBinding, VM : FragmentViewModel> : BaseFragment() {
 
     lateinit var coreFragment: T
     lateinit var binding: DB
     var vm: VM? = null
+        get() {
+            if (field == null) field = createViewModel()
+            return field
+        }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return getRoot()
@@ -27,14 +33,10 @@ abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM>,
 
     abstract fun workArea()
 
+    @LayoutRes
     abstract fun getLayoutView(): Int
 
     abstract fun getFragmentContext(): T
-
-    fun getViewModel(): VM {
-        if (vm == null) vm = createViewModel()
-        return vm as VM
-    }
 
     abstract fun createViewModel(): VM
 

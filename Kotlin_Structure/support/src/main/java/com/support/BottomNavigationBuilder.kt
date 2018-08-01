@@ -2,11 +2,15 @@ package com.example.parth.kotlinpractice_2.support
 
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
+import android.support.annotation.IdRes
+import android.support.annotation.MenuRes
 import android.support.design.internal.BottomNavigationItemView
 import android.support.design.internal.BottomNavigationMenuView
 import android.support.design.widget.BottomNavigationView
 import android.util.Log
-import com.example.parth.kotlinpractice_2.support.kotlin.getColor
+import android.view.MenuItem
+import com.support.R
+import com.support.kotlin.color
 import kotlinx.android.synthetic.main.activity_core.*
 import kotlinx.android.synthetic.main.content_drawer.*
 
@@ -30,7 +34,7 @@ class BottomNavigationBuilder(val coreActivity: CoreActivity<*, *, *>) {
      * @param menuResID
      * Pass MENU resource ID to be set in BottomNavigation
      */
-    fun setMenu(menuResID: Int) {
+    fun setMenu(@MenuRes menuResID: Int) {
         view.inflateMenu(menuResID)
     }
 
@@ -65,8 +69,8 @@ class BottomNavigationBuilder(val coreActivity: CoreActivity<*, *, *>) {
         )
 
         val colors = intArrayOf(
-                selectedColorResID.getColor(coreActivity),
-                defaultColorResID.getColor(coreActivity)
+                selectedColorResID.color(coreActivity),
+                defaultColorResID.color(coreActivity)
         )
 
         view.itemIconTintList = ColorStateList(states, colors)
@@ -74,10 +78,11 @@ class BottomNavigationBuilder(val coreActivity: CoreActivity<*, *, *>) {
     }
 
     /**
-     * Use this method to enable / disable the shifting mode of BottomNavigation
+     * Use this method to enable / disable the shifting mode of BottomNavigation.
      * @param isShifting
-     * Pass TRUE/FALSE to enable/disable the shifting mode respectively
+     * Pass TRUE/FALSE to enable/disable the shifting mode respectively.
      */
+
     @SuppressLint("RestrictedApi")
     fun shiftModeEnabled(isShifting: Boolean) {
         if (!isShifting) {
@@ -103,8 +108,12 @@ class BottomNavigationBuilder(val coreActivity: CoreActivity<*, *, *>) {
         }
     }
 
-    fun itemSelectedHandler(navigation: (BottomNavigationView) -> Unit) {
-        navigation(view)
+    fun itemSelectionHandler(navigation: (MenuItem) -> Unit) {
+        view.setOnNavigationItemSelectedListener { navigation.invoke(it);true}
+    }
+
+    fun selectedItem(@IdRes menuItemID: Int) {
+        view.selectedItemId = menuItemID
     }
 }
 

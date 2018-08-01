@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.parth.kotlin_practice_27.MainViewModel" />
+            type="com.example.parth.kotlin_practice_28.MainViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -15,16 +15,10 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipeRefresh"
+        <FrameLayout
+            android:id="@+id/main_activity_box"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </android.support.v4.widget.SwipeRefreshLayout>
+            android:layout_height="match_parent" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
