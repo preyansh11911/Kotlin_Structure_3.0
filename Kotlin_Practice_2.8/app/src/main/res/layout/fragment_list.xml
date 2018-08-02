@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.example.parth.kotlin_practice_28.RecyclerListViewModel" />
+            type="com.example.parth.kotlin_practice_28.RecyclerView.RecyclerListViewModel" />
     </data>
 
     <android.support.v4.widget.NestedScrollView
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
             android:orientation="vertical"
-            tools:context=".RecyclerListFragment">
+            tools:context=".RecyclerView.RecyclerListFragment">
 
             <TextView
                 android:layout_width="match_parent"
