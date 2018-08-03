@@ -1,4 +1,4 @@
-package com.support
+package com.support.builders.RecyckerViewBuilder
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
@@ -7,6 +7,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.support.BR
+import com.support.POJOModel
+import com.support.R
 
 class RecyclerViewBuilder_Binding<T : POJOModel, U : ViewDataBinding>
 /**
@@ -19,10 +22,6 @@ class RecyclerViewBuilder_Binding<T : POJOModel, U : ViewDataBinding>
     private val VIEW_TYPE_LOADER = 1021
 
     var itemView: Int = 0
-        get() = field
-        set(value) {
-            field = value
-        }
     var isLoading = false
     var hasMore = false
     var contentBindingListener: ((T, U, Int) -> Unit)? = null
@@ -76,7 +75,7 @@ class RecyclerViewBuilder_Binding<T : POJOModel, U : ViewDataBinding>
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-                val totalItemCount = recyclerView?.layoutManager?.getItemCount()
+                val totalItemCount = recyclerView?.layoutManager?.itemCount
                 val lastVisibleItem = (recyclerView?.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
                 val visibleThreshold = 5
                 if ((hasMore && !isLoading) && totalItemCount!! <= (lastVisibleItem + visibleThreshold)) {

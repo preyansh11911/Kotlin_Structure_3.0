@@ -1,4 +1,4 @@
-package com.support
+package com.support.builders.RecyckerViewBuilder
 
 import android.support.annotation.LayoutRes
 import android.support.v7.widget.GridLayoutManager
@@ -7,8 +7,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.support.RecyclerViewLayoutManager.*
-import com.support.RecyclerViewLinearLayout.Orientation
+import com.support.POJOModel
+import com.support.R
+import com.support.builders.RecyckerViewBuilder.RecyclerViewLayoutManager.*
+import com.support.builders.RecyckerViewBuilder.RecyclerViewLinearLayout.Orientation
 
 fun <T : POJOModel> RecyclerView.setUp(@LayoutRes layoutResID: Int, itemList: ArrayList<T>, @LayoutManager layoutManager: Int, @Orientation orientation: Int, builder: RecyclerViewBuilder<T>.() -> Unit) = RecyclerViewBuilder<T>(this, layoutResID, itemList, layoutManager, orientation).apply(builder)
 
@@ -19,10 +21,6 @@ class RecyclerViewBuilder<T : POJOModel>
     private val VIEW_TYPE_LOADER = 1022
 
     var itemView: Int = 0
-        get() = field
-        set(value) {
-            field = value
-        }
 
     var spanCount: (() -> Int)? = { 1 }
         set(value) {
@@ -91,7 +89,7 @@ class RecyclerViewBuilder<T : POJOModel>
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-                val totalItemCount = recyclerView?.layoutManager?.getItemCount()
+                val totalItemCount = recyclerView?.layoutManager?.itemCount
                 val lastVisibleItem = (recyclerView?.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
                 val visibleThreshold = 5
                 if ((hasMore && !isLoading) && totalItemCount!! <= (lastVisibleItem + visibleThreshold)) {

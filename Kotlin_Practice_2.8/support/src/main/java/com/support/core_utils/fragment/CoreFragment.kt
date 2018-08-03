@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.support.FragmentViewModel
+import com.support.core_utils.FragmentViewModel
 
 abstract class CoreFragment<T : CoreFragment<T, VM>, VM : FragmentViewModel> : BaseFragment() {
 

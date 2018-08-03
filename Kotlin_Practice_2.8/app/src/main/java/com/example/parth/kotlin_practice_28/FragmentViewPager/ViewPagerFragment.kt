@@ -2,7 +2,7 @@ package com.example.parth.kotlin_practice_28.FragmentViewPager
 
 import com.example.parth.kotlin_practice_28.R
 import com.example.parth.kotlin_practice_28.databinding.FragmentViewPagerBinding
-import com.support.CoreFragment_DataBinding
+import com.support.core_utils.CoreFragment_DataBinding
 
 
 class ViewPagerFragment : CoreFragment_DataBinding<ViewPagerFragment, FragmentViewPagerBinding, ViewPagerViewModel>() {

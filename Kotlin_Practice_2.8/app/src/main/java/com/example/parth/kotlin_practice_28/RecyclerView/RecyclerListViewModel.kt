@@ -3,12 +3,11 @@ package com.example.parth.kotlin_practice_28.RecyclerView
 import android.support.annotation.LayoutRes
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.example.parth.kotlin_practice_28.SampleModel
-import com.support.FragmentViewModel
-import com.support.RecyclerViewLayoutManager.GRID
-import com.support.RecyclerViewLayoutManager.LayoutManager
-import com.support.RecyclerViewLinearLayout.Orientation
-import com.support.setUp
+import com.support.builders.RecyckerViewBuilder.RecyclerViewLayoutManager.GRID
+import com.support.builders.RecyckerViewBuilder.RecyclerViewLayoutManager.LayoutManager
+import com.support.builders.RecyckerViewBuilder.RecyclerViewLinearLayout.Orientation
+import com.support.builders.RecyckerViewBuilder.setUp
+import com.support.core_utils.FragmentViewModel
 import kotlinx.android.synthetic.main.item_row_main.view.*
 
 class RecyclerListViewModel(val mFragment: RecyclerListFragment) : FragmentViewModel() {

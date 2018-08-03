@@ -10,10 +10,10 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.support.kotlin.showAlert
 import com.support.R
 import com.support.databinding.ActivityCoreBinding
 import com.support.databinding.ActivityDrawerBinding
+import com.support.kotlin.showAlert
 import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.android.synthetic.main.app_bar_drawer.*
 import kotlinx.android.synthetic.main.tool_bar.*

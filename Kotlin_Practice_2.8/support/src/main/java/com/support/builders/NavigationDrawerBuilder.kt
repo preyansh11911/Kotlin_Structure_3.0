@@ -1,4 +1,4 @@
-package com.support
+package com.support.builders
 
 import android.databinding.DataBindingUtil
 import android.support.design.widget.NavigationView

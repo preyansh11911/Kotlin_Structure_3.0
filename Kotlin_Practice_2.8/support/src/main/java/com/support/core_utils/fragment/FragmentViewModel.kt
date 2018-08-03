@@ -1,4 +1,4 @@
-package com.support
+package com.support.core_utils
 
 import android.arch.lifecycle.ViewModel
 

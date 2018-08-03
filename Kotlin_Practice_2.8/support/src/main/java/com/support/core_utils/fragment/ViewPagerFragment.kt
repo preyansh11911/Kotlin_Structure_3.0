@@ -1,15 +1,17 @@
-package com.support
+package com.support.core_utils.fragment
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.support.annotation.LayoutRes
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.parth.kotlinpractice_2.support.BaseFragment
+import com.support.POJOModel
+import com.support.core_utils.FragmentViewModel
 
-abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM>, DB : ViewDataBinding, VM : FragmentViewModel> : BaseFragment() {
+abstract class ViewPagerFragment<T : ViewPagerFragment<T, DB, VM, PM>, DB : ViewDataBinding, VM : FragmentViewModel, PM : POJOModel> : Fragment() {
 
     lateinit var coreFragment: T
     lateinit var binding: DB
@@ -41,4 +43,6 @@ abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM>,
     abstract fun createViewModel(): VM
 
     abstract fun setVM(binding: DB)
+
+    abstract fun setItem(vm: VM, item: PM)
 }

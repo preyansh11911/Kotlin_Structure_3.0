@@ -9,7 +9,6 @@ import android.support.design.internal.BottomNavigationMenuView
 import android.support.design.widget.BottomNavigationView
 import android.util.Log
 import android.view.MenuItem
-import com.support.R
 import com.support.kotlin.color
 import kotlinx.android.synthetic.main.activity_core.*
 import kotlinx.android.synthetic.main.content_drawer.*

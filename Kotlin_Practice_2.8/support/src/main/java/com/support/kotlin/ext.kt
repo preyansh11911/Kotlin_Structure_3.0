@@ -10,10 +10,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
 import com.example.parth.kotlinpractice_2.support.*
-import com.support.NavigationDrawerBuilder
 import com.support.POJOModel
-import com.support.RecyclerViewBuilder
-import com.support.RecyclerViewBuilder_Binding
+import com.support.builders.NavigationDrawerBuilder
+import com.support.builders.RecyckerViewBuilder.RecyclerViewBuilder_Binding
 
 fun Context.showAlert(alertDialog: AlertDialogBuilder.() -> Unit) = AlertDialogBuilder(this).apply(alertDialog)
 
@@ -80,5 +79,5 @@ enum class Duration {
 
 fun CoreActivity<*, *, *>.setUpBottomNavigation(builder: BottomNavigationBuilder.() -> Unit) = BottomNavigationBuilder(this).apply(builder)
 fun <T : ActivityViewModel> CoreActivity<*, *, *>.setUpNavigationDrawer(viewModel: T, builder: NavigationDrawerBuilder<T>.() -> Unit) = NavigationDrawerBuilder<T>(this, viewModel).apply(builder)
-fun <T : POJOModel, U: ViewDataBinding> RecyclerView.setUpRecyclerView_Binding(itemList: ArrayList<T>, builder: RecyclerViewBuilder_Binding<T,U>.() -> Unit) = RecyclerViewBuilder_Binding<T,U>(this, itemList).apply(builder)
+fun <T : POJOModel, U : ViewDataBinding> RecyclerView.setUpRecyclerView_Binding(itemList: ArrayList<T>, builder: RecyclerViewBuilder_Binding<T, U>.() -> Unit) = RecyclerViewBuilder_Binding<T, U>(this, itemList).apply(builder)
 //fun <T : POJOModel> RecyclerView.setUpRecyclerView(itemList: ArrayList<T>, builder: RecyclerViewBuilder<T>.() -> Unit) = RecyclerViewBuilder<T>(this, itemList).apply(builder)
