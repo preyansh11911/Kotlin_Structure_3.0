@@ -7,12 +7,13 @@ import com.support.builders.RecyckerViewBuilder.RecyclerViewLayoutManager.LINEAR
 import com.support.builders.RecyckerViewBuilder.RecyclerViewLinearLayout.HORIZONTAL
 import com.support.builders.RecyckerViewBuilder.RecyclerViewLinearLayout.VERTICAL
 import com.support.core_utils.CoreFragment_DataBinding
+import kotlinx.android.synthetic.main.fragment_list.view.*
 
 class RecyclerListFragment : CoreFragment_DataBinding<RecyclerListFragment, FragmentListBinding, RecyclerListViewModel>() {
 
     override fun workArea() {
 
-        vm.let {
+        vm?.let {
             it.createListView(it.view.rec_vertical, R.layout.item_row_main, LINEAR, VERTICAL)
             it.createListView(it.view.rec_horizontal, R.layout.item_row_horizontal, LINEAR, HORIZONTAL)
             it.createListView(it.view.rec_grid, R.layout.item_row_grid, GRID, VERTICAL)

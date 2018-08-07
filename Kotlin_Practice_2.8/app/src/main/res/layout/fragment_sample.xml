@@ -7,25 +7,23 @@
 
         <variable
             name="vm"
-            type="com.example.parth.kotlin_practice_28.FragmentViewPager.ViewPagerViewModel" />
+            type="com.example.parth.kotlin_practice_28.SampleFragViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FragmentViewPager.ViewPagerFragment">
+        tools:context=".SampleFragment">
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
+            android:id="@+id/sample_frag_view_pgaer"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <android.support.design.widget.TabLayout
+            android:id="@+id/sample_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
+            app:layout_constraintBottom_toBottomOf="parent" />
     </android.support.constraint.ConstraintLayout>
 </layout>

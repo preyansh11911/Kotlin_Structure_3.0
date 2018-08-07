@@ -6,20 +6,18 @@
 
         <variable
             name="vm"
-            type="com.example.parth.kotlin_practice_28.FragmentViewPager.SingleItemViweModel" />
+            type="com.example.parth.kotlin_practice_28.FragmentViewPager.ImagePagerViewModel" />
     </data>
 
-    <FrameLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FragmentViewPager.SingleItemFragment">
+        tools:context=".FragmentViewPager.ImagePagerFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-
-        <ImageView
-            android:id="@+id/img_pager_single_item"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </FrameLayout>
+    </android.support.constraint.ConstraintLayout>
 </layout>

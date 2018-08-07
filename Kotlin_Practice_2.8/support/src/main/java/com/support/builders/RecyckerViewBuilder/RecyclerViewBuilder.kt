@@ -12,7 +12,13 @@ import com.support.R
 import com.support.builders.RecyckerViewBuilder.RecyclerViewLayoutManager.*
 import com.support.builders.RecyckerViewBuilder.RecyclerViewLinearLayout.Orientation
 
-fun <T : POJOModel> RecyclerView.setUp(@LayoutRes layoutResID: Int, itemList: ArrayList<T>, @LayoutManager layoutManager: Int, @Orientation orientation: Int, builder: RecyclerViewBuilder<T>.() -> Unit) = RecyclerViewBuilder<T>(this, layoutResID, itemList, layoutManager, orientation).apply(builder)
+fun <T : POJOModel> RecyclerView.setUp(
+        @LayoutRes layoutResID: Int,
+        itemList: ArrayList<T>,
+        @LayoutManager layoutManager: Int,
+        @Orientation orientation: Int,
+        builder: RecyclerViewBuilder<T>.() -> Unit
+) = RecyclerViewBuilder<T>(this, layoutResID, itemList, layoutManager, orientation).apply(builder)
 
 class RecyclerViewBuilder<T : POJOModel>
 (val recyclerView: RecyclerView, val layoutResID: Int, val mItems: ArrayList<T>, @LayoutManager layoutManager: Int, @Orientation orientation: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

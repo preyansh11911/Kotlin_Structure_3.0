@@ -8,10 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.parth.kotlinpractice_2.support.BaseFragment
-import com.support.POJOModel
 
-abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM, PM>, DB : ViewDataBinding, VM : FragmentViewModel, PM : POJOModel> : BaseFragment() {
-
+abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM>, DB : ViewDataBinding, VM : FragmentViewModel> : BaseFragment() {
 
     lateinit var coreFragment: T
     lateinit var binding: DB
@@ -33,11 +31,6 @@ abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM, 
         return binding.root
     }
 
-
-    fun newInstance(item: PM) {
-        setItem(vm!!, item)
-    }
-
     abstract fun workArea()
 
     @LayoutRes
@@ -49,5 +42,4 @@ abstract class CoreFragment_DataBinding<T : CoreFragment_DataBinding<T, DB, VM, 
 
     abstract fun setVM(binding: DB)
 
-    abstract fun setItem(vm: VM, item: PM)
 }

@@ -8,10 +8,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.support.POJOModel
 import com.support.core_utils.FragmentViewModel
 
-abstract class ViewPagerFragment<T : ViewPagerFragment<T, DB, VM, PM>, DB : ViewDataBinding, VM : FragmentViewModel, PM : POJOModel> : Fragment() {
+abstract class ViewPagerFragment<T : ViewPagerFragment<T, DB, VM>, DB : ViewDataBinding, VM : FragmentViewModel> : Fragment() {
 
     lateinit var coreFragment: T
     lateinit var binding: DB
@@ -43,6 +42,4 @@ abstract class ViewPagerFragment<T : ViewPagerFragment<T, DB, VM, PM>, DB : View
     abstract fun createViewModel(): VM
 
     abstract fun setVM(binding: DB)
-
-    abstract fun setItem(vm: VM, item: PM)
 }

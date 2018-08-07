@@ -1,8 +1,10 @@
 package com.example.parth.kotlin_practice_28.RecyclerView
 
+import android.content.Intent
 import android.support.annotation.LayoutRes
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.example.parth.kotlin_practice_28.SampleActivity
 import com.support.builders.RecyckerViewBuilder.RecyclerViewLayoutManager.GRID
 import com.support.builders.RecyckerViewBuilder.RecyclerViewLayoutManager.LayoutManager
 import com.support.builders.RecyckerViewBuilder.RecyclerViewLinearLayout.Orientation
@@ -26,7 +28,8 @@ class RecyclerListViewModel(val mFragment: RecyclerListFragment) : FragmentViewM
                 view.tv_desc.text = item.desc
 
                 view.setOnClickListener {
-                    removeItem(item)
+                    //                    removeItem(item)
+                    mFragment.startActivity(Intent(mFragment.activity, SampleActivity::class.java))
                 }
             }
             isNestedScrollingEnabled = { false }
