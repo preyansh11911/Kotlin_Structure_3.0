@@ -8,9 +8,10 @@ class ImagePagerViewModel(val mFragment: ImagePagerFragment) : FragmentViewModel
     fun setViewPager() {
 //        mFragment.binding.viewPager.adapter = SamplePagerAdapter(mFragment.childFragmentManager, createImageList())
 
-        mFragment.binding.viewPager.setUp(mFragment.childFragmentManager, createImageList(), BlankFragment()) {
-
-        }
+        mFragment.binding.viewPager
+                .setUp(mFragment.childFragmentManager,
+                        createImageList()) { getFragmentInstance { BlankFragment.newInstance(it) } }
+        mFragment.binding.tabLayout.setupWithViewPager(mFragment.binding.viewPager)
     }
 
     fun createImageList(): ArrayList<PagerSingleItemModel> {
