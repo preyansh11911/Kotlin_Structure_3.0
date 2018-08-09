@@ -6,21 +6,19 @@
 
         <variable
             name="vm"
-            type="com.example.parth.kotlin_practice_28.FragmentViewPager.BlankViewModel" />
+            type="com.example.parth.kotlin_practice_28.TabView.tab_1.Tab1ViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FragmentViewPager.BlankFragment">
+        tools:context=".TabView.tab_1.Tab_1Fragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <ImageView
-            android:id="@+id/blank_img_view"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:text="@string/hello_blank_fragment" />
+            android:gravity="center"
+            android:text="This is tab 1" />
 
     </FrameLayout>
 </layout>
